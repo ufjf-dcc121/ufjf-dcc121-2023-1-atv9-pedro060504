@@ -12,7 +12,7 @@
     </header>
     <main>
         <form action="">
-            <input type="text" name="name"/>
+            <input type="text" name="nome"/>
             <input type="text" name="sobrenome"/>
             <input type="text" name="idade"/>
             <input type="submit" />
@@ -24,10 +24,16 @@
         form.addEventListener("submit", aoEnviar);
 
         function aoEnviar(evento){
-            
+
             evento.preventDefault();
             console.log("Hello,form");
-        }
+            const nome = form.nome.value;
+            const sobrenome = form.sobrenome.value;
+            const idade = Number(form.idade.valueAsNumber);
+            const nomeCompleto = `${nome} ${sobrenome}, ${idade} anos`;
+            console.log(nomeCompleto);
+        }        
     </script>
+    
 </body>
 </html>
